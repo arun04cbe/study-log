@@ -4,6 +4,18 @@
 
 1. `Public IP Addresses` - Identifier of the server to outside world
 2. `DNS (Domain Name System)` - Translates easy to remember names into IP Addresses
+   1. Internet's Directory
+   2. Human Friendly name to machine readable number (Names to IP address)
+   3. `Verisign` manages the DB of all the registered domain names (More than 350 Million)
+   4. DNS Resolver resolves the url with the IP address
+   5. DNS Servers
+      1. Root Nameservers (13 RootNameservers in the world)
+         1. Stores the IP addresses of the TLD Name Servers
+      2. TLD Nameservers
+         1. Stores the IP addresses of all the Authoritative name server for all the domains
+      3. Authoritative Nameserver
+         1. Final source of truth which has the IP addresses
+   6. When a DNS Query is made, browser checks the cache, ISP (Internet Server Provider) and if it is not found, the query gets routed to the Root Name Server and that gets routed back to the Top Level Domain Server and then based on the domain it finally goes to the Authoritative name server which sends the IP address and then the connection is made and communication can be established.
 3. `Ports` - Numbered channels in the server
    1. Ranges from 1 to 65535
    2. Web Servers listens on port `80`, secured one listens on port `443`
