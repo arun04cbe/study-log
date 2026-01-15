@@ -68,7 +68,18 @@
     4. When the server writes to the DB, it should also be written to the replica.
     5. When the write to replica fails, the transaction should be handled. Write time now increases.
     6. Depending on the use case, write to replica could be done either sync or async.
-17. `Redudancy` - Avoid Single Point of Failure
+    7. Read Heavy application - Multiple-Read Replication
+       1. Eg:- Social Media feeds
+       2. Provides high availability
+       3. Cannot promise consistency
+       4. Okay to have Replication lag
+    8. Replication gives availability
+    9. Limitations
+       1. Replication does not solve write heavy operations
+       2. This is mainly for read-heavy operations
+       3. When using sync replication with primary database, it makes sure consistency but write operation takes times.
+       4. When using async replication, possible data loss but provided availability and try to provide eventual consistency
+17. `Redundancy` - Avoid Single Point of Failure
     ![SPOF](../images/Redudancy.png)
 18. `Pre-Signed URLs`
     1. When uploading huge volume of data, typical approach - send to server -> server uploads to the cloud storage
